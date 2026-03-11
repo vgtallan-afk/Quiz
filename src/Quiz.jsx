@@ -903,6 +903,10 @@ export default function Quiz() {
         @keyframes spinLoader { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         @keyframes pulseCore { 0%,100% { opacity:1; transform:translate(-50%,-50%) scale(1); } 50% { opacity:0.55; transform:translate(-50%,-50%) scale(0.7); } }
         @keyframes fadeSlideUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+@keyframes questionZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+}
         * { box-sizing: border-box; }
         body { margin: 0; background: #FDFBF7; }
       `}</style>
