@@ -536,7 +536,7 @@ export default function Quiz() {
       alignItems: "center",
       padding: "0 16px",
     }}>
-      <div style={{ width: "100%", maxWidth: "420px", padding: "40px 0 200px" }}>
+      <div style={{ width: "100%", maxWidth: "420px", padding: "40px 0" }}>
 
         {/* ── INTRO ── */}
         {phase === "intro" && (
