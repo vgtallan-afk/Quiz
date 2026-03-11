@@ -561,24 +561,48 @@ export default function Quiz() {
             </p>
             <Card style={{ marginBottom: "24px" }}>
               {quizData.intro.split("\n\n").map((p, i, arr) => (
-                <p key={i} style={{ fontSize: "15px", lineHeight: 1.8, color: "#374151", margin: i < arr.length - 1 ? "0 0 14px 0" : 0 }}>{p}</p>
-              ))}
-            </Card>
-            <button onClick={() => setPhase("quiz")} style={{
-              width: "100%", padding: "16px", fontSize: "14px", fontWeight: 700,
-              letterSpacing: "0.06em", textTransform: "uppercase",
-              background: G, color: "#3D2B00",
-              border: "none", borderRadius: "14px", cursor: "pointer",
-              boxShadow: "0 4px 12px rgba(212,175,55,0.35)",
-              fontFamily: "'Public Sans','Inter',sans-serif",
-              transition: "transform 0.15s, box-shadow 0.15s"
-            }}
-              onMouseEnter={e => { e.target.style.transform = "translateY(-1px)"; e.target.style.boxShadow = "0 8px 24px rgba(212,175,55,0.45)"; }}
-              onMouseLeave={e => { e.target.style.transform = "translateY(0)"; e.target.style.boxShadow = "0 4px 12px rgba(212,175,55,0.35)"; }}
-            >
-              Começar o teste
-            </button>
-          </div>
+  <p
+    key={i}
+    style={{
+      fontSize: "15px",
+      lineHeight: 1.8,
+      color: "#374151",
+      margin: i < arr.length - 1 ? "0 0 14px 0" : 0
+    }}
+  >
+    {p}
+  </p>
+))}
+</Card>
+
+<button
+  onClick={() => setPhase("quiz")}
+  style={{
+    position: "fixed",
+    bottom: "20px",
+    left: "50%",
+    transform: "translateX(-50%)",
+    width: "calc(100% - 32px)",
+    maxWidth: "420px",
+    padding: "16px",
+    fontSize: "14px",
+    fontWeight: 700,
+    letterSpacing: "0.06em",
+    textTransform: "uppercase",
+    background: G,
+    color: "#3D2B00",
+    border: "none",
+    borderRadius: "14px",
+    cursor: "pointer",
+    boxShadow: "0 4px 12px rgba(212,175,55,0.35)",
+    fontFamily: "'Public Sans','Inter',sans-serif",
+    zIndex: 10
+  }}
+>
+  Começar o teste
+</button>
+
+</div>
         )}
 
         {/* ── QUIZ ── */}
