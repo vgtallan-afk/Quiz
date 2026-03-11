@@ -579,11 +579,6 @@ export default function Quiz() {
   onClick={() => setPhase("quiz")}
   style={{
     width: "100%",
-    bottom: "20px",
-    left: "50%",
-    transform: "translateX(-50%)",
-    width: "calc(100% - 32px)",
-    maxWidth: "420px",
     padding: "16px",
     fontSize: "14px",
     fontWeight: 700,
@@ -595,8 +590,7 @@ export default function Quiz() {
     borderRadius: "14px",
     cursor: "pointer",
     boxShadow: "0 4px 12px rgba(212,175,55,0.35)",
-    fontFamily: "'Public Sans','Inter',sans-serif",
-    zIndex: 10
+    fontFamily: "'Public Sans','Inter',sans-serif"
   }}
 >
   Começar o teste
