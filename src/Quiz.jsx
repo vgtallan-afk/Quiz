@@ -688,7 +688,6 @@ export default function Quiz() {
                   </button>
                 ))}
               </div>
-            </Card>
           </div>
         )}
 
