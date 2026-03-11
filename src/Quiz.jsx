@@ -917,7 +917,6 @@ export default function Quiz() {
               <p style={{ fontSize: "12px", fontWeight: 500, color: "#94A3B8", marginTop: "14px", lineHeight: 1.6, marginBottom: 0 }}>
                 O que você vai encontrar leva em conta exatamente onde você está agora.
               </p>
-            </Card>
 
             {/* Restart */}
             <div style={{ textAlign: "center", padding: "8px 0" }}>
