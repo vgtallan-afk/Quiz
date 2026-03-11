@@ -528,7 +528,18 @@ export default function Quiz() {
         {/* ── INTRO ── */}
         {phase === "intro" && (
           <div style={{ animation: "fadeIn 0.8s ease" }}>
-            <Label>Teste Psicológico</Label>
+
+  <img
+    src="/intro.png"
+    alt="Intro"
+    style={{
+      width: "100%",
+      borderRadius: "16px",
+      marginBottom: "20px"
+    }}
+  />
+
+  <Label>Teste Psicológico</Label>
             <h1 style={{ fontSize: "clamp(20px, 6vw, 24px)", fontWeight: 700, lineHeight: 1.3, color: "#0A1128", marginBottom: "8px", marginTop: 0 }}>
               {quizData.title}
             </h1>
@@ -585,6 +596,18 @@ export default function Quiz() {
               transform: animating ? "translateY(-6px)" : "translateY(0)",
               transition: "opacity 0.3s ease, transform 0.3s ease"
             }}>
+
+              <img
+  src={`/${current + 1}.png`}
+  alt={`Situação ${current + 1}`}
+  style={{
+    width: "100%",
+    borderRadius: "16px",
+    marginBottom: "16px"
+  }}
+/>
+
+              
               <Label>Situação {current + 1}</Label>
               <p style={{ fontSize: "17px", fontWeight: 500, lineHeight: 1.75, color: "#0A1128", margin: "0 0 24px 0", minHeight: "80px" }}>
                 {quizData.statements[current]}
@@ -812,6 +835,17 @@ export default function Quiz() {
               <p style={{ fontSize: "14px", fontWeight: 500, lineHeight: 1.85, color: "#64748B", marginBottom: "28px", fontStyle: "italic" }}>
                 Você não precisa se adaptar ao que vem a seguir. O que vem a seguir é que foi feito pra se adaptar a você.
               </p>
+              
+<img
+  src="/cta.png"
+  alt="CTA"
+  style={{
+    width: "100%",
+    borderRadius: "16px",
+    marginBottom: "20px"
+  }}
+/>
+
               <a href="#" style={{
                 display: "block", width: "100%", padding: "16px",
                 fontSize: "14px", fontWeight: 700, letterSpacing: "0.06em",
