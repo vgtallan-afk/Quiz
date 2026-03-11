@@ -608,6 +608,7 @@ export default function Quiz() {
               opacity: animating ? 0 : 1,
               transform: animating ? "translateY(-6px)" : "translateY(0)",
               transition: "opacity 0.3s ease, transform 0.3s ease"
+              paddingBottom: "140px",
             }}>
 
 <img
@@ -628,7 +629,22 @@ export default function Quiz() {
               <p style={{ fontSize: "17px", fontWeight: 500, lineHeight: 1.75, color: "#0A1128", margin: "0 0 24px 0", minHeight: "80px" }}>
                 {quizData.statements[current]}
               </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+<div
+  style={{
+    position: "fixed",
+    bottom: 0,
+    left: "50%",
+    transform: "translateX(-50%)",
+    width: "100%",
+    maxWidth: "420px",
+    padding: "16px",
+    background: "#FDFBF7",
+    display: "flex",
+    flexDirection: "column",
+    gap: "10px",
+    zIndex: 5
+  }}
+>
                 {[
                   { label: "Verdadeiro", value: true, desc: "Isso já aconteceu comigo" },
                   { label: "Falso", value: false, desc: "Nunca passei por isso" }
