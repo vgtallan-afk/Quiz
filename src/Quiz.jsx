@@ -918,6 +918,8 @@ export default function Quiz() {
                 O que você vai encontrar leva em conta exatamente onde você está agora.
               </p>
 
+              </Card>
+
             {/* Restart */}
             <div style={{ textAlign: "center", padding: "8px 0" }}>
               <button onClick={reset} style={{
