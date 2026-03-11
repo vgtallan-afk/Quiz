@@ -417,13 +417,13 @@ const Label = ({ children }) => (
 
 const PROCESSING_STEPS = [
   { label: "Padrões de comunicação...", time: 500 },
-  { label: "Gatilhos emocionais...", time: 1400 },
-  { label: "Protocolos psicológicos...", time: 2400 },
-  { label: "Sinais de reciprocidade...", time: 3600 },
-  { label: "Dinâmicas de poder...", time: 4700 },
-  { label: "Leitura personalizada...", time: 5600 },
+  { label: "Gatilhos emocionais...", time: 1600 },
+  { label: "Protocolos psicológicos...", time: 2700 },
+  { label: "Sinais de reciprocidade...", time: 3900 },
+  { label: "Dinâmicas de poder...", time: 5100 },
+  { label: "Leitura personalizada...", time: 6000 },
 ];
-const PROCESSING_TOTAL = 6000;
+const PROCESSING_TOTAL = 6500;
 
 export default function Quiz() {
   const [phase, setPhase] = useState("intro");
@@ -490,7 +490,7 @@ export default function Quiz() {
     );
     const lastStep = setTimeout(() => {
       setProcStepsDone(prev => { const n = new Set(prev); n.add(PROCESSING_STEPS.length - 1); return n; });
-    }, 17500);
+    }, 6200);
 
     // rAF eased progress — write directly to DOM to avoid React batching issues
     procStartRef.current = performance.now();
@@ -509,7 +509,7 @@ export default function Quiz() {
     procRafRef.current = requestAnimationFrame(animate);
 
     // Auto advance to result
-    const done = setTimeout(() => setPhase("result"), PROCESSING_TOTAL + 500);
+    const done = setTimeout(() => setPhase("result"), 6500);
 
     return () => {
       timers.forEach(clearTimeout);
