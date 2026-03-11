@@ -602,16 +602,13 @@ export default function Quiz() {
           marginBottom: "10px"
         }}
       >
-        Continue lendo antes de começar
-      </p>
-
-    </div>
+            </div>
 
     {/* BOTÃO FIXO */}
     <div
       style={{
         position: "fixed",
-        bottom: 0,
+        bottom: "env(safe-area-inset-bottom)",
         left: "50%",
         transform: "translateX(-50%)",
         width: "100%",
@@ -647,37 +644,38 @@ export default function Quiz() {
 
   </div>
 )}
-        )}
 
-        {/* ── QUIZ ── */}
-        {phase === "quiz" && (
-          <div style={{ animation: "fadeIn 0.4s ease" }}>
-            {/* Progress */}
-            <div style={{ marginBottom: "24px" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
-                <span style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#94A3B8" }}>
-                  {current + 1} de {quizData.statements.length}
-                </span>
-                <span style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.15em", color: "#D4AF37" }}>
-                  {Math.round(progress)}%
-                </span>
-              </div>
-              <div style={{ height: "6px", background: "#EEE9DE", borderRadius: "99px", overflow: "hidden" }}>
-                <div style={{
-                  height: "100%", width: `${progress}%`,
-                  background: G, borderRadius: "99px",
-                  transition: "width 0.4s ease"
-                }} />
-              </div>
-            </div>
+{/* ── QUIZ ── */}
+{phase === "quiz" && (
+  <div style={{ animation: "fadeIn 0.4s ease" }}>
+    {/* Progress */}
+    <div style={{ marginBottom: "24px" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
+        <span style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#94A3B8" }}>
+          {current + 1} de {quizData.statements.length}
+        </span>
+        <span style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.15em", color: "#D4AF37" }}>
+          {Math.round(progress)}%
+        </span>
+      </div>
+      <div style={{ height: "6px", background: "#EEE9DE", borderRadius: "99px", overflow: "hidden" }}>
+        <div style={{
+          height: "100%",
+          width: `${progress}%`,
+          background: G,
+          borderRadius: "99px",
+          transition: "width 0.4s ease"
+        }} />
+      </div>
+    </div>
 
-            {/* Question card */}
-            <Card style={{
-              opacity: animating ? 0 : 1,
-              transform: animating ? "translateY(-6px)" : "translateY(0)",
-              transition: "opacity 0.3s ease, transform 0.3s ease",
-              paddingBottom: "20px"
-            }}>
+    {/* Question card */}
+    <Card style={{
+      opacity: animating ? 0 : 1,
+      transform: animating ? "translateY(-6px)" : "translateY(0)",
+      transition: "opacity 0.3s ease, transform 0.3s ease",
+      paddingBottom: "20px"
+    }}>
 
 <img
   key={current}
