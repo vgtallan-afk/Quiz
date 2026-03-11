@@ -416,14 +416,14 @@ const Label = ({ children }) => (
 
 
 const PROCESSING_STEPS = [
-  { label: "Padrões de comunicação...", time: 2000 },
-  { label: "Gatilhos emocionais...", time: 4500 },
-  { label: "Protocolos psicológicos...", time: 7000 },
-  { label: "Sinais de reciprocidade...", time: 9500 },
-  { label: "Dinâmicas de poder...", time: 12500 },
-  { label: "Leitura personalizada...", time: 15500 },
+  { label: "Padrões de comunicação...", time: 500 },
+  { label: "Gatilhos emocionais...", time: 1400 },
+  { label: "Protocolos psicológicos...", time: 2400 },
+  { label: "Sinais de reciprocidade...", time: 3600 },
+  { label: "Dinâmicas de poder...", time: 4700 },
+  { label: "Leitura personalizada...", time: 5600 },
 ];
-const PROCESSING_TOTAL = 18000;
+const PROCESSING_TOTAL = 6000;
 
 export default function Quiz() {
   const [phase, setPhase] = useState("intro");
