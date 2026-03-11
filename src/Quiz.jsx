@@ -832,6 +832,16 @@ export default function Quiz() {
 
             {/* CTA */}
             <Card style={{ marginBottom: "16px", textAlign: "center" }}>
+<img
+  src="/topo.png"
+  alt="Topo"
+  style={{
+    width: "100%",
+    borderRadius: "16px",
+    marginBottom: "20px"
+  }}
+/>
+              
               <Label>Antes de sair</Label>
               <p style={{ fontSize: "18px", fontWeight: 700, lineHeight: 1.45, color: "#0A1128", marginBottom: "16px", marginTop: "4px" }}>
                 Não existe nenhuma outra mulher no mundo que viveu exatamente o que você viveu.
