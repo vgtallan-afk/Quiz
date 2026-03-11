@@ -559,7 +559,7 @@ export default function Quiz() {
             <p style={{ fontSize: "14px", fontWeight: 500, color: "#64748B", marginBottom: "24px", lineHeight: 1.6 }}>
               {quizData.subtitle}
             </p>
-            <Card style={{ marginBottom: "60px", position: "relative" }}>
+            <Card style={{ marginBottom: "48px", position: "relative" }}>
   {quizData.intro.split("\n\n").map((p, i, arr) => (
     <p
       key={i}
@@ -575,6 +575,17 @@ export default function Quiz() {
   ))}
 
 </Card>
+
+<p
+  style={{
+    fontSize: "12px",
+    color: "#94A3B8",
+    textAlign: "center",
+    marginBottom: "10px"
+  }}
+>
+  Continue lendo antes de começar
+</p>
 
 <button
   onClick={() => setPhase("quiz")}
