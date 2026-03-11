@@ -612,6 +612,7 @@ export default function Quiz() {
 
 <img
   key={current}
+  loading="eager"
   src={`/${current + 1}.png`}
   alt={`Situação ${current + 1}`}
   style={{
