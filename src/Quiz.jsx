@@ -559,7 +559,7 @@ export default function Quiz() {
             <p style={{ fontSize: "14px", fontWeight: 500, color: "#64748B", marginBottom: "24px", lineHeight: 1.6 }}>
               {quizData.subtitle}
             </p>
-            <Card style={{ marginBottom: "24px", position: "relative", overflow: "hidden", maxHeight: "220px" }}>
+            <Card style={{ marginBottom: "24px", position: "relative", overflow: "hidden", maxHeight: "220px", overflowY: "auto" }}>
   {quizData.intro.split("\n\n").map((p, i, arr) => (
     <p
       key={i}
