@@ -575,25 +575,10 @@ export default function Quiz() {
 ))}
 </Card>
 
-<div
-  style={{
-    position: "fixed",
-    bottom: "90px",
-    left: "50%",
-    transform: "translateX(-50%)",
-    width: "100%",
-    maxWidth: "420px",
-    height: "90px",
-    background: "linear-gradient(to bottom, rgba(253,251,247,0), #FDFBF7)",
-    pointerEvents: "none",
-    zIndex: 9
-  }}
-/>
-
 <button
   onClick={() => setPhase("quiz")}
   style={{
-    position: "fixed",
+    width: "100%",
     bottom: "20px",
     left: "50%",
     transform: "translateX(-50%)",
