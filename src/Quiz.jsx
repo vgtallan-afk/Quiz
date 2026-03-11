@@ -628,7 +628,6 @@ export default function Quiz() {
               <Label>Situação {current + 1}</Label>
               <div
   style={{
-    maxHeight: "28vh",
     overflowY: "auto",
     marginBottom: "24px"
   }}
