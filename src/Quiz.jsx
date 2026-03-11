@@ -636,7 +636,8 @@ export default function Quiz() {
   {quizData.statements[current]}
 </p>
 </div>
-
+</Card>
+            
 <div
   style={{
     position: "fixed",
