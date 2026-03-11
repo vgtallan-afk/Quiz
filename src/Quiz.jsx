@@ -559,20 +559,31 @@ export default function Quiz() {
             <p style={{ fontSize: "14px", fontWeight: 500, color: "#64748B", marginBottom: "24px", lineHeight: 1.6 }}>
               {quizData.subtitle}
             </p>
-            <Card style={{ marginBottom: "24px" }}>
-              {quizData.intro.split("\n\n").map((p, i, arr) => (
-  <p
-    key={i}
+            <Card style={{ marginBottom: "24px", position: "relative", overflow: "hidden" }}>
+  {quizData.intro.split("\n\n").map((p, i, arr) => (
+    <p
+      key={i}
+      style={{
+        fontSize: "15px",
+        lineHeight: 1.8,
+        color: "#374151",
+        margin: i < arr.length - 1 ? "0 0 14px 0" : 0
+      }}
+    >
+      {p}
+    </p>
+  ))}
+
+  <div
     style={{
-      fontSize: "15px",
-      lineHeight: 1.8,
-      color: "#374151",
-      margin: i < arr.length - 1 ? "0 0 14px 0" : 0
+      position: "absolute",
+      bottom: 0,
+      left: 0,
+      width: "100%",
+      height: "100px",
+      background: "linear-gradient(to bottom, rgba(253,251,247,0), #FDFBF7)"
     }}
-  >
-    {p}
-  </p>
-))}
+  />
 </Card>
 
 <button
