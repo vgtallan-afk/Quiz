@@ -418,10 +418,10 @@ const Label = ({ children }) => (
 const PROCESSING_STEPS = [
   { label: "Padrões de comunicação...", time: 500 },
   { label: "Gatilhos emocionais...", time: 1600 },
-  { label: "Protocolos psicológicos...", time: 2700 },
-  { label: "Sinais de reciprocidade...", time: 3900 },
-  { label: "Dinâmicas de poder...", time: 5100 },
-  { label: "Leitura personalizada...", time: 6000 },
+  { label: "Protocolos psicológicos...", time: 2200 },
+  { label: "Sinais de reciprocidade...", time: 3200 },
+  { label: "Dinâmicas de poder...", time: 4600 },
+  { label: "Leitura personalizada...", time: 5200 },
 ];
 const PROCESSING_TOTAL = 6500;
 
