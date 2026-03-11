@@ -432,6 +432,19 @@ export default function Quiz() {
   const [score, setScore] = useState(null);
   const [animating, setAnimating] = useState(false);
 
+  useEffect(() => {
+  const images = [
+    "/intro.png",
+    "/cta.png",
+    ...Array.from({ length: 15 }, (_, i) => `/${i + 1}.png`)
+  ];
+
+  images.forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+}, []);
+
   // ── Processing screen state ──
   const [procStepsDone, setProcStepsDone] = useState(new Set());
   const [procActiveStep, setProcActiveStep] = useState(null);
@@ -598,6 +611,7 @@ export default function Quiz() {
             }}>
 
               <img
+  key={current}
   src={`/${current + 1}.png`}
   alt={`Situação ${current + 1}`}
   style={{
