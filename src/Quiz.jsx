@@ -626,9 +626,18 @@ export default function Quiz() {
 
               
               <Label>Situação {current + 1}</Label>
-              <p style={{ fontSize: "17px", fontWeight: 500, lineHeight: 1.75, color: "#0A1128", margin: "0 0 24px 0", minHeight: "80px" }}>
-                {quizData.statements[current]}
-              </p>
+              <div
+  style={{
+    maxHeight: "28vh",
+    overflowY: "auto",
+    marginBottom: "24px"
+  }}
+>
+<p style={{ fontSize: "17px", fontWeight: 500, lineHeight: 1.75, color: "#0A1128", margin: 0 }}>
+  {quizData.statements[current]}
+</p>
+</div>
+
 <div
   style={{
     position: "fixed",
