@@ -594,14 +594,6 @@ export default function Quiz() {
         ))}
       </Card>
 
-      <p
-        style={{
-          fontSize: "12px",
-          color: "#94A3B8",
-          textAlign: "center",
-          marginBottom: "10px"
-        }}
-      >
             </div>
 
     {/* BOTÃO FIXO */}
