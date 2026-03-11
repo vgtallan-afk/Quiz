@@ -581,7 +581,7 @@ export default function Quiz() {
       left: 0,
       width: "100%",
       height: "100px",
-      background: "linear-gradient(to bottom, rgba(253,251,247,0), #FDFBF7)"
+      background: "linear-gradient(to bottom, rgba(255,255,255,0), #FFFFFF)"
     }}
   />
 </Card>
