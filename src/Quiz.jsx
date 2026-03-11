@@ -539,76 +539,114 @@ export default function Quiz() {
       <div style={{ width: "100%", maxWidth: "420px", padding: "40px 0" }}>
 
         {/* ── INTRO ── */}
-        {phase === "intro" && (
-          <div style={{ animation: "fadeIn 0.8s ease" }}>
+{phase === "intro" && (
+  <div style={{ animation: "fadeIn 0.8s ease", position: "relative" }}>
 
-  <img
-    src="/intro.png"
-    alt="Intro"
-    style={{
-      width: "100%",
-      borderRadius: "16px",
-      marginBottom: "20px"
-    }}
-  />
+    {/* CONTEÚDO QUE ROLA */}
+    <div style={{ paddingBottom: "140px" }}>
 
-  <Label>Teste Psicológico</Label>
-            <h1 style={{ fontSize: "clamp(20px, 6vw, 24px)", fontWeight: 700, lineHeight: 1.3, color: "#0A1128", marginBottom: "8px", marginTop: 0 }}>
-              {quizData.title}
-            </h1>
-            <p style={{ fontSize: "14px", fontWeight: 500, color: "#64748B", marginBottom: "24px", lineHeight: 1.6 }}>
-              {quizData.subtitle}
-            </p>
-            <Card style={{ marginBottom: "48px", position: "relative" }}>
-  {quizData.intro.split("\n\n").map((p, i, arr) => (
-    <p
-      key={i}
+      <img
+        src="/intro.png"
+        alt="Intro"
+        style={{
+          width: "100%",
+          borderRadius: "16px",
+          marginBottom: "20px"
+        }}
+      />
+
+      <Label>Teste Psicológico</Label>
+
+      <h1 style={{
+        fontSize: "clamp(20px, 6vw, 24px)",
+        fontWeight: 700,
+        lineHeight: 1.3,
+        color: "#0A1128",
+        marginBottom: "8px",
+        marginTop: 0
+      }}>
+        {quizData.title}
+      </h1>
+
+      <p style={{
+        fontSize: "14px",
+        fontWeight: 500,
+        color: "#64748B",
+        marginBottom: "24px",
+        lineHeight: 1.6
+      }}>
+        {quizData.subtitle}
+      </p>
+
+      <Card style={{ marginBottom: "48px" }}>
+        {quizData.intro.split("\n\n").map((p, i, arr) => (
+          <p
+            key={i}
+            style={{
+              fontSize: "15px",
+              lineHeight: 1.8,
+              color: "#374151",
+              margin: i < arr.length - 1 ? "0 0 14px 0" : 0
+            }}
+          >
+            {p}
+          </p>
+        ))}
+      </Card>
+
+      <p
+        style={{
+          fontSize: "12px",
+          color: "#94A3B8",
+          textAlign: "center",
+          marginBottom: "10px"
+        }}
+      >
+        Continue lendo antes de começar
+      </p>
+
+    </div>
+
+    {/* BOTÃO FIXO */}
+    <div
       style={{
-        fontSize: "15px",
-        lineHeight: 1.8,
-        color: "#374151",
-        margin: i < arr.length - 1 ? "0 0 14px 0" : 0
+        position: "fixed",
+        bottom: 0,
+        left: "50%",
+        transform: "translateX(-50%)",
+        width: "100%",
+        maxWidth: "420px",
+        padding: "24px 16px 20px",
+        background: "linear-gradient(to top, #FDFBF7 65%, rgba(253,251,247,0))",
+        zIndex: 10
       }}
     >
-      {p}
-    </p>
-  ))}
 
-</Card>
+      <button
+        onClick={() => setPhase("quiz")}
+        style={{
+          width: "100%",
+          padding: "16px",
+          fontSize: "14px",
+          fontWeight: 700,
+          letterSpacing: "0.06em",
+          textTransform: "uppercase",
+          background: G,
+          color: "#3D2B00",
+          border: "none",
+          borderRadius: "14px",
+          cursor: "pointer",
+          boxShadow: "0 4px 12px rgba(212,175,55,0.35)",
+          fontFamily: "'Public Sans','Inter',sans-serif"
+        }}
+      >
+        Começar o teste
+      </button>
 
-<p
-  style={{
-    fontSize: "12px",
-    color: "#94A3B8",
-    textAlign: "center",
-    marginBottom: "10px"
-  }}
->
-  Continue lendo antes de começar
-</p>
+    </div>
 
-<button
-  onClick={() => setPhase("quiz")}
-  style={{
-    width: "100%",
-    padding: "16px",
-    fontSize: "14px",
-    fontWeight: 700,
-    letterSpacing: "0.06em",
-    textTransform: "uppercase",
-    background: G,
-    color: "#3D2B00",
-    border: "none",
-    borderRadius: "14px",
-    cursor: "pointer",
-    boxShadow: "0 4px 12px rgba(212,175,55,0.35)",
-    fontFamily: "'Public Sans','Inter',sans-serif"
-  }}
->
-  Começar o teste
-</button>
-
-</div>
+  </div>
+)}
         )}
 
         {/* ── QUIZ ── */}
