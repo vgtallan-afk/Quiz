@@ -608,7 +608,7 @@ export default function Quiz() {
               opacity: animating ? 0 : 1,
               transform: animating ? "translateY(-6px)" : "translateY(0)",
               transition: "opacity 0.3s ease, transform 0.3s ease",
-              paddingBottom: "140px",
+              paddingBottom: "140px"
             }}>
 
 <img
