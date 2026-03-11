@@ -610,14 +610,15 @@ export default function Quiz() {
               transition: "opacity 0.3s ease, transform 0.3s ease"
             }}>
 
-              <img
+<img
   key={current}
   src={`/${current + 1}.png`}
   alt={`Situação ${current + 1}`}
   style={{
     width: "100%",
     borderRadius: "16px",
-    marginBottom: "16px"
+    marginBottom: "16px",
+    animation: "questionZoom 12s ease-in-out infinite alternate"
   }}
 />
 
