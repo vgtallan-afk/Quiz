@@ -214,7 +214,7 @@ Leia cada frase com calma. Marque VERDADEIRO se aquilo já aconteceu com você �
     "Você já pensou \"talvez eu tenha exagerado\" logo depois de uma situação que, na hora, claramente pareceu injusta pra você.",
     "Você já ouviu alguém desabafar por um bom tempo e, quando tentou falar sobre algo seu, a conversa mudou de assunto rapidinho.",
     "Você já ficou pensando em como falar uma coisa de um jeito que a outra pessoa não entendesse como crítica — mesmo quando o que você queria dizer era simples.",
-    "Você já se convenceu de que o comportamento de alguém que te magoou tinha uma boa explicação — \"ele deve estar estressado\", \"ela não quis dizer assim\" — mesmo tendo ficado chateada.",
+    'Você já se convenceu de que o comportamento de alguém que te magoou tinha uma boa explicação — "ele deve estar passando por algo difícil".',
     "Em alguma relação, você já sentiu que precisava se segurar na conversa porque sabia que, se falasse mais direto, as coisas iam piorar."
     "Você já releu uma conversa no WhatsApp tentando entender se disse algo errado — mesmo sem nenhum sinal claro de que tinha errado alguma coisa.",
     "Você já foi a pessoa que voltou a falar sobre uma briga para tentar resolver — enquanto a outra pessoa esperava em silêncio ou ficou no canto dela.",
