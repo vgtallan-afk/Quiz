@@ -734,7 +734,7 @@ else {
     key={opt.label}
     onClick={() => {
       if (navigator.vibrate) {
-        navigator.vibrate(15);
+        navigator.vibrate(12);
       }
       handleAnswer(opt.value);
     }}
