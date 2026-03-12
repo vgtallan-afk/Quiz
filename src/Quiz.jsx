@@ -800,7 +800,7 @@ else {
                 Interpretando suas respostas...
               </h2>
               <p style={{ fontSize: "14px", fontWeight: 500, color: "#64748B", margin: 0, lineHeight: 1.6 }}>
-                Nossas ferramentas estão interpretando os padrões presentes nas suas respostas.
+                Estamos analisando os padrões nas suas respostas.
               </p>
             </div>
 
