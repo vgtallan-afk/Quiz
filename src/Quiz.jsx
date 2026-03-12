@@ -600,7 +600,7 @@ export default function Quiz() {
 <div
   style={{
     position: "fixed",
-    bottom: 0,
+    bottom: -18,
     left: "50%",
     transform: "translateX(-50%)",
     width: "100%",
