@@ -606,7 +606,7 @@ export default function Quiz() {
         width: "100%",
         maxWidth: "420px",
         padding: "24px 16px 20px",
-        background: "linear-gradient(to top, #FDFBF7 65%, rgba(253,251,247,0))",
+        background: "linear-gradient(to top, #FDFBF7 40%, rgba(253,251,247,0.85) 65%, rgba(253,251,247,0))",
         zIndex: 10
       }}
     >
