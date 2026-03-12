@@ -605,7 +605,7 @@ export default function Quiz() {
         transform: "translateX(-50%)",
         width: "100%",
         maxWidth: "420px",
-        padding: "24px 16px 20px",
+        padding: "32px 16px 26px",
         background: "linear-gradient(to top, #FDFBF7 40%, rgba(253,251,247,0.85) 65%, rgba(253,251,247,0))",
         zIndex: 10
       }}
