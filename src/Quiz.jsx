@@ -498,9 +498,22 @@ export default function Quiz() {
       const elapsed = now - procStartRef.current;
       const t = Math.min(elapsed / PROCESSING_TOTAL, 1);
       let p;
-      if (t <= 0.4)      p = (t / 0.4) * 50;
-      else if (t <= 0.7) p = 50 + ((t - 0.4) / 0.3) * 30;
-      else               p = 80 + ((t - 0.7) / 0.3) * 20;
+
+if (t <= 0.35) {
+  p = (t / 0.35) * 45;
+}
+else if (t <= 0.50) {
+  p = 45; // pausa 1
+}
+else if (t <= 0.65) {
+  p = 45 + ((t - 0.50) / 0.15) * 25;
+}
+else if (t <= 0.80) {
+  p = 70; // pausa 2
+}
+else {
+  p = 70 + ((t - 0.80) / 0.20) * 30;
+}
       const pct = Math.min(p, 100);
       if (procBarRef.current) procBarRef.current.style.width = pct + '%';
       if (procPctRef.current) procPctRef.current.textContent = Math.round(pct) + '%';
