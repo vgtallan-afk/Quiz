@@ -396,7 +396,7 @@ const Card = ({ children, style = {} }) => (
   <div style={{
     background: "#FFFFFF",
     borderRadius: "24px",
-    padding: "24px",
+    padding: "18px",
     border: "1px solid rgba(0,0,0,0.05)",
     boxShadow: "0 2px 16px rgba(0,0,0,0.06)",
     ...style
@@ -581,14 +581,14 @@ export default function Quiz() {
       <Card style={{ marginBottom: "48px" }}>
         {quizData.intro.split("\n\n").map((p, i, arr) => (
           <p
-            key={i}
-            style={{
-              fontSize: "15px",
-              lineHeight: 1.8,
-              color: "#374151",
-              margin: i < arr.length - 1 ? "0 0 14px 0" : 0
-            }}
-          >
+  key={i}
+  style={{
+    fontSize: "15px",
+    lineHeight: 1.55,
+    color: "#374151",
+    margin: i < arr.length - 1 ? "0 0 8px 0" : 0
+  }}
+>
             {p}
           </p>
         ))}
@@ -596,17 +596,17 @@ export default function Quiz() {
 
             </div>
 
-    {/* BOTÃO FIXO */}
+{/* BOTÃO FIXO */}
 <div
   style={{
     position: "fixed",
-    bottom: "-28px",
+    bottom: 0,
     left: "50%",
     transform: "translateX(-50%)",
     width: "100%",
     maxWidth: "420px",
-    padding: "56px 16px 34px",
-    background: "linear-gradient(to top, #FDFBF7 35%, rgba(253,251,247,0.8) 60%, rgba(253,251,247,0))",
+    padding: "24px 16px 20px",
+    background: "linear-gradient(to top, #FDFBF7 65%, rgba(253,251,247,0))",
     zIndex: 10
   }}
 >
