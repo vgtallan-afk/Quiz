@@ -597,19 +597,19 @@ export default function Quiz() {
             </div>
 
     {/* BOTÃO FIXO */}
-    <div
-      style={{
-        position: "fixed",
-        bottom: "env(safe-area-inset-bottom)",
-        left: "50%",
-        transform: "translateX(-50%)",
-        width: "100%",
-        maxWidth: "420px",
-        padding: "32px 16px 26px",
-        background: "linear-gradient(to top, #FDFBF7 40%, rgba(253,251,247,0.85) 65%, rgba(253,251,247,0))",
-        zIndex: 10
-      }}
-    >
+<div
+  style={{
+    position: "fixed",
+    bottom: "-28px",
+    left: "50%",
+    transform: "translateX(-50%)",
+    width: "100%",
+    maxWidth: "420px",
+    padding: "56px 16px 34px",
+    background: "linear-gradient(to top, #FDFBF7 35%, rgba(253,251,247,0.8) 60%, rgba(253,251,247,0))",
+    zIndex: 10
+  }}
+>
 
       <button
         onClick={() => setPhase("quiz")}
