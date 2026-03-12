@@ -543,7 +543,7 @@ export default function Quiz() {
   <div style={{ animation: "fadeIn 0.8s ease", position: "relative" }}>
 
     {/* CONTEÚDO QUE ROLA */}
-    <div style={{ paddingBottom: "140px" }}>
+    <div style={{ paddingBottom: "90px" }}>
 
       <img
         src="/intro.png"
