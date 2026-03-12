@@ -586,7 +586,7 @@ export default function Quiz() {
     fontSize: "15px",
     lineHeight: 1.55,
     color: "#374151",
-    margin: i < arr.length - 1 ? "0 0 12px 0" : 0
+    margin: i < arr.length - 1 ? "0 0 13px 0" : 0
   }}
 >
             {p}
