@@ -999,16 +999,7 @@ else {
 
               </Card>
 
-            {/* Restart */}
-            <div style={{ textAlign: "center", padding: "8px 0" }}>
-              <button onClick={reset} style={{
-                background: "transparent", border: "none", color: "#94A3B8",
-                fontSize: "12px", fontWeight: 500, cursor: "pointer",
-                textDecoration: "underline", fontFamily: "'Public Sans','Inter',sans-serif", padding: "8px"
-              }}>
-                Refazer o teste
-              </button>
-            </div>
+            
           </div>
         )}
       </div>
