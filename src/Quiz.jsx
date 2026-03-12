@@ -939,7 +939,7 @@ else {
               
               <Label>Antes de sair</Label>
               <p style={{ fontSize: "18px", fontWeight: 700, lineHeight: 1.45, color: "#0A1128", marginBottom: "16px", marginTop: "4px" }}>
-                Não existe nenhuma outra mulher no mundo que viveu exatamente o que você viveu.
+                Nenhuma outra mulher no mundo viveu exatamente o que você viveu.
               </p>
               <p style={{ fontSize: "14px", fontWeight: 500, lineHeight: 1.85, color: "#64748B", marginBottom: "14px" }}>
                 As mesmas palavras, ditas por pessoas diferentes, machucam de formas diferentes. O mesmo comportamento, vindo de pessoas diferentes, deixa marcas diferentes.
