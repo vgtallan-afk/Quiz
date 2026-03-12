@@ -726,13 +726,23 @@ else {
   }}
 >
                 {[
-                  { label: "Verdadeiro", value: true, desc: "Isso já aconteceu comigo" },
-                  { label: "Falso", value: false, desc: "Nunca passei por isso" }
-                ].map(opt => (
-                  <button key={opt.label} onClick={() => handleAnswer(opt.value)} style={{
-                    width: "100%", padding: "14px 16px",
-                    background: "#F8F6F1",
-                    border: "1.5px solid transparent",
+                  {[
+  { label: "Verdadeiro", value: true, desc: "Isso já aconteceu comigo" },
+  { label: "Falso", value: false, desc: "Nunca passei por isso" }
+].map(opt => (
+  <button
+    key={opt.label}
+    onClick={() => {
+      if (navigator.vibrate) {
+        navigator.vibrate(15);
+      }
+      handleAnswer(opt.value);
+    }}
+    style={{
+      width: "100%",
+      padding: "14px 16px",
+      background: "#F8F6F1",
+      border: "1.5px solid transparent",
                     borderRadius: "14px", cursor: "pointer", textAlign: "left",
                     transition: "all 0.18s ease",
                     fontFamily: "'Public Sans','Inter',sans-serif",
