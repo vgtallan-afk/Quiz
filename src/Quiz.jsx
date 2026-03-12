@@ -726,7 +726,6 @@ else {
   }}
 >
                 {[
-                  {[
   { label: "Verdadeiro", value: true, desc: "Isso já aconteceu comigo" },
   { label: "Falso", value: false, desc: "Nunca passei por isso" }
 ].map(opt => (
