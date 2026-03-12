@@ -509,7 +509,7 @@ export default function Quiz() {
     procRafRef.current = requestAnimationFrame(animate);
 
     // Auto advance to result
-    const done = setTimeout(() => setPhase("result"), 6500);
+    const done = setTimeout(() => setPhase("result"), 7000);
 
     return () => {
       timers.forEach(clearTimeout);
