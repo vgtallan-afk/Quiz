@@ -215,12 +215,12 @@ Leia cada frase com calma. Marque VERDADEIRO se aquilo já aconteceu com você �
     "Você já ouviu alguém desabafar por um bom tempo e, quando tentou falar sobre algo seu, a conversa mudou de assunto rapidinho.",
     "Você já ficou pensando em como falar uma coisa de um jeito que a outra pessoa não entendesse como crítica — mesmo quando o que você queria dizer era simples.",
     'Você já se convenceu de que o comportamento de alguém que te magoou tinha uma boa explicação — "ele deve estar passando por algo difícil".',
-    "Em alguma relação, você já sentiu que precisava se segurar na conversa porque sabia que, se falasse mais direto, as coisas iam piorar."
+    "Em alguma relação, você já sentiu que precisava se segurar na conversa porque sabia que, se falasse mais direto, as coisas iam piorar.",
     "Você já releu uma conversa no WhatsApp tentando entender se disse algo errado — mesmo sem nenhum sinal claro de que tinha errado alguma coisa.",
     "Você já foi a pessoa que voltou a falar sobre uma briga para tentar resolver — enquanto a outra pessoa esperava em silêncio ou ficou no canto dela.",
     "Você já sentiu um cansaço estranho depois de certas conversas — não era raiva nem tristeza, mas uma sensação pesada que ficava em você.",
     "Você já teve a sensação de que algumas pessoas na sua vida pedem muito de você emocionalmente — mas achou difícil falar isso porque pareceria reclamação.",
-    "Você já explicou como se sentiu mais de uma vez pra mesma pessoa — e mesmo assim tudo aconteceu de novo."
+    "Você já explicou como se sentiu mais de uma vez pra mesma pessoa — e mesmo assim tudo aconteceu de novo.",
     "Você já teve aquele pensamento silencioso de: \"por que sempre sou eu que estou tentando fazer tudo funcionar?\""
   ],
   results: [
