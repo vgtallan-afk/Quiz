@@ -733,7 +733,7 @@ export default function Quiz() {
 
             {/* CTA */}
             <Card style={{ marginBottom: "16px", textAlign: "center" }}>
-              <a href="#" style={{
+              <a href="https://produtodigitalelite.com/claramente" style={{
                 display: "block", width: "100%", padding: "16px",
                 fontSize: "14px", fontWeight: 700, letterSpacing: "0.06em",
                 textTransform: "uppercase", textAlign: "center",
