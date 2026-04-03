@@ -278,24 +278,41 @@ export default function Quiz() {
   const [animating, setAnimating] = useState(false);
 
   const [imagesReady, setImagesReady] = useState(false);
+  const [imgExt, setImgExt] = useState('.png');
 
   useEffect(() => {
-    const sources = [
-      "/intro.png",
-      "/cta.png",
-      ...Array.from({ length: 15 }, (_, i) => `/${i + 1}.png`)
+    // Detect WebP support
+    const supportsWebP = document.createElement('canvas')
+      .toDataURL('image/webp').indexOf('data:image/webp') === 0;
+    const ext = supportsWebP ? '.webp' : '.png';
+    setImgExt(ext);
+
+    // Priority: intro first, then first 3 questions, then rest
+    const priority = [
+      `/intro${ext}`,
+      `/1${ext}`, `/2${ext}`, `/3${ext}`
     ];
-    let loaded = 0;
-    sources.forEach(src => {
+    const rest = [
+      `/cta${ext}`,
+      ...Array.from({ length: 12 }, (_, i) => `/${i + 4}${ext}`)
+    ];
+
+    const preload = (src) => new Promise(resolve => {
       const img = new Image();
-      img.onload = img.onerror = () => {
-        loaded++;
-        if (loaded >= sources.length) setImagesReady(true);
-      };
+      img.onload = img.onerror = resolve;
       img.src = src;
-      // Force full decode so they're ready to paint instantly
       if (img.decode) img.decode().catch(() => {});
     });
+
+    // Load priority images first (sequentially to avoid bandwidth competition)
+    (async () => {
+      for (const src of priority) {
+        await preload(src);
+      }
+      setImagesReady(true);
+      // Then load rest in parallel (user is still on intro or early questions)
+      await Promise.all(rest.map(preload));
+    })();
   }, []);
 
   // ── Processing screen state ──
@@ -405,7 +422,7 @@ export default function Quiz() {
             <div style={{ paddingBottom: "90px" }}>
 
               <img
-                src="/intro.png"
+                src={`/intro${imgExt}`}
                 alt="Intro"
                 style={{
                   width: "100%",
@@ -519,7 +536,7 @@ export default function Quiz() {
                 {quizData.statements.map((_, idx) => (
                   <img
                     key={idx}
-                    src={`/${idx + 1}.png`}
+                    src={`/${idx + 1}${imgExt}`}
                     alt={`Situação ${idx + 1}`}
                     style={{
                       width: "100%",
