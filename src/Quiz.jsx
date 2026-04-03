@@ -277,15 +277,24 @@ export default function Quiz() {
   const [score, setScore] = useState(null);
   const [animating, setAnimating] = useState(false);
 
+  const [imagesReady, setImagesReady] = useState(false);
+
   useEffect(() => {
-    const images = [
+    const sources = [
       "/intro.png",
       "/cta.png",
-      ...Array.from({ length: 10 }, (_, i) => `/${i + 1}.png`)
+      ...Array.from({ length: 15 }, (_, i) => `/${i + 1}.png`)
     ];
-    images.forEach(src => {
+    let loaded = 0;
+    sources.forEach(src => {
       const img = new Image();
+      img.onload = img.onerror = () => {
+        loaded++;
+        if (loaded >= sources.length) setImagesReady(true);
+      };
       img.src = src;
+      // Force full decode so they're ready to paint instantly
+      if (img.decode) img.decode().catch(() => {});
     });
   }, []);
 
@@ -506,18 +515,27 @@ export default function Quiz() {
               transition: "opacity 0.3s ease, transform 0.3s ease",
               paddingBottom: "20px"
             }}>
-              <img
-                key={current}
-                loading="eager"
-                src={`/${current + 1}.png`}
-                alt={`Situação ${current + 1}`}
-                style={{
-                  width: "100%",
-                  borderRadius: "16px",
-                  marginBottom: "16px",
-                  animation: "questionZoom 12s ease-in-out infinite alternate"
-                }}
-              />
+              <div style={{ position: "relative", width: "100%", borderRadius: "16px", overflow: "hidden", marginBottom: "16px" }}>
+                {quizData.statements.map((_, idx) => (
+                  <img
+                    key={idx}
+                    src={`/${idx + 1}.png`}
+                    alt={`Situação ${idx + 1}`}
+                    style={{
+                      width: "100%",
+                      display: "block",
+                      borderRadius: "16px",
+                      position: idx === current ? "relative" : "absolute",
+                      top: 0,
+                      left: 0,
+                      opacity: idx === current ? 1 : 0,
+                      transition: "opacity 0.3s ease",
+                      pointerEvents: idx === current ? "auto" : "none",
+                      animation: idx === current ? "questionZoom 12s ease-in-out infinite alternate" : "none"
+                    }}
+                  />
+                ))}
+              </div>
 
               <Label>Situação {current + 1}</Label>
               <div style={{ overflowY: "auto", marginBottom: "24px" }}>
