@@ -474,12 +474,12 @@ export default function Quiz() {
             <div
               style={{
                 position: "fixed",
-                bottom: 0,
+                bottom: 16,
                 left: "50%",
                 transform: "translateX(-50%)",
                 width: "100%",
                 maxWidth: "420px",
-                padding: "24px 16px calc(20px + env(safe-area-inset-bottom, 12px))",
+                padding: "24px 16px 20px",
                 background: "linear-gradient(to top, #FDFBF7 65%, rgba(253,251,247,0))",
                 zIndex: 10
               }}
@@ -573,12 +573,12 @@ export default function Quiz() {
             <div
               style={{
                 position: "fixed",
-                bottom: 0,
+                bottom: 16,
                 left: "50%",
                 transform: "translateX(-50%)",
                 width: "100%",
                 maxWidth: "420px",
-                padding: "16px 16px calc(16px + env(safe-area-inset-bottom, 12px))",
+                padding: "16px",
                 background: "#FDFBF7",
                 display: "flex",
                 flexDirection: "column",
@@ -676,7 +676,7 @@ export default function Quiz() {
               <div style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#D4AF37", marginBottom: "18px" }}>
                 O que estamos verificando
               </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
                 {PROCESSING_STEPS.map((step, i) => {
                   const isDone = procStepsDone.has(i);
                   const isActive = procActiveStep === i && !isDone;
@@ -684,6 +684,7 @@ export default function Quiz() {
                   return (
                     <div key={i} style={{
                       display: "flex", alignItems: "center", gap: "12px",
+                      minHeight: "24px",
                       opacity: visible ? 1 : 0.18,
                       animation: visible ? "fadeSlideUp 0.4s ease forwards" : "none",
                       transition: "opacity 0.25s ease",
