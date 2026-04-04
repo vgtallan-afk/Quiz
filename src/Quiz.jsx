@@ -459,10 +459,10 @@ export default function Quiz() {
                 {quizData.intro}
               </p>
 
-              <div style={{ display: "flex", flexDirection: "column", gap: "10px", marginBottom: "24px" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "14px", marginBottom: "24px" }}>
                 {quizData.bullets.map((bullet, i) => (
                   <div key={i} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                    <span style={{ fontSize: "16px", lineHeight: 1 }}>✅</span>
+                    <span style={{ fontSize: "16px", lineHeight: 1.4 }}>✅</span>
                     <span style={{ fontSize: "14px", fontWeight: 600, color: "#374151" }}>{bullet}</span>
                   </div>
                 ))}
@@ -479,7 +479,7 @@ export default function Quiz() {
                 transform: "translateX(-50%)",
                 width: "100%",
                 maxWidth: "420px",
-                padding: "24px 16px 20px",
+                padding: "24px 16px calc(20px + env(safe-area-inset-bottom, 12px))",
                 background: "linear-gradient(to top, #FDFBF7 65%, rgba(253,251,247,0))",
                 zIndex: 10
               }}
@@ -578,7 +578,7 @@ export default function Quiz() {
                 transform: "translateX(-50%)",
                 width: "100%",
                 maxWidth: "420px",
-                padding: "16px",
+                padding: "16px 16px calc(16px + env(safe-area-inset-bottom, 12px))",
                 background: "#FDFBF7",
                 display: "flex",
                 flexDirection: "column",
@@ -676,7 +676,7 @@ export default function Quiz() {
               <div style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "#D4AF37", marginBottom: "18px" }}>
                 O que estamos verificando
               </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
                 {PROCESSING_STEPS.map((step, i) => {
                   const isDone = procStepsDone.has(i);
                   const isActive = procActiveStep === i && !isDone;
