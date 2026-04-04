@@ -226,8 +226,8 @@ const quizData = {
       scoreMin: 9,
       scoreMax: 10,
       name: "Suas decisões não estão sendo só suas.",
-      text: "Você se identificou com quase tudo. Isso não é coincidência — é um padrão que já mudou a forma como você vive, como você fala, como você decide.\n\nPlanos que ficaram no papel. Conversas que você evitou. Versões de você que foram sendo adiadas. Não foi por falta de vontade. Foi porque, cada vez que você tentou, alguma coisa fez você recuar — e com o tempo, recuar virou o caminho automático.\n\nEsse padrão não para sozinho. Ele se repete até ser interrompido.",
-      cta: "Descobrir o que está por trás disso — e como parar"
+      text: "Você se identificou com quase tudo. Isso não é coincidência — é um padrão que já mudou a forma como você vive, como você fala, como você decide.\n\nIsso acontece porque o padrão não afeta só como você se sente, mas como você se comporta. Você parou de ser a pessoa que decide e passou a ser a pessoa que reage à reação dos outros. E quanto mais você tenta resolver, mais o padrão se alimenta.\n\nA boa notícia é que, quando você entende o mecanismo, ele perde a força. Você não precisa de anos de terapia pra isso — você precisa das ferramentas certas para o momento em que o padrão tenta se ativar.",
+      cta: "Acessar as ferramentas agora"
     }
   ]
 };
@@ -322,6 +322,19 @@ export default function Quiz() {
   const procRafRef = useRef(null);
   const procBarRef = useRef(null);
   const procPctRef = useRef(null);
+
+  // ── RASTREADOR DO FACEBOOK (CÉREBRO) ──
+  useEffect(() => {
+    if (phase === "result") {
+      // Avisa o Facebook que ela terminou o quiz
+      if (window.fbq) {
+        window.fbq('track', 'ViewContent', {
+          content_name: 'Resultado do Quiz',
+          content_category: 'Funil ClaraMente'
+        });
+      }
+    }
+  }, [phase]);
 
   const handleAnswer = (val) => {
     if (animating) return;
@@ -699,9 +712,10 @@ export default function Quiz() {
                       <span style={{
                         fontSize: "12px", fontWeight: 600,
                         letterSpacing: "0.02em",
-                        color: isDone ? "#0A1128" : isActive ? "#C5A059" : "#94A3B8",
+                        color: "#94A3B8",
                         transition: "color 0.3s ease",
                         lineHeight: 1.45, flex: 1,
+                        ...(isDone ? { color: "#0A1128" } : isActive ? { color: "#C5A059" } : {})
                       }}>
                         {step.label}
                       </span>
