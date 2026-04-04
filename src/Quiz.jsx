@@ -278,23 +278,17 @@ export default function Quiz() {
   const [animating, setAnimating] = useState(false);
 
   const [imagesReady, setImagesReady] = useState(false);
-  const [imgExt, setImgExt] = useState('.webp');
+  const imgExt = '.webp';
 
   useEffect(() => {
-    // Detect WebP support
-    const supportsWebP = document.createElement('canvas')
-      .toDataURL('image/webp').indexOf('data:image/webp') === 0;
-    const ext = supportsWebP ? '.webp' : '.png';
-    setImgExt(ext);
-
     // Priority: intro first, then first 3 questions, then rest
     const priority = [
-      `/intro${ext}`,
-      `/1${ext}`, `/2${ext}`, `/3${ext}`
+      `/intro.webp`,
+      `/1.webp`, `/2.webp`, `/3.webp`
     ];
     const rest = [
-      `/cta${ext}`,
-      ...Array.from({ length: 12 }, (_, i) => `/${i + 4}${ext}`)
+      `/cta.webp`,
+      ...Array.from({ length: 12 }, (_, i) => `/${i + 4}.webp`)
     ];
 
     const preload = (src) => new Promise(resolve => {
@@ -427,7 +421,7 @@ export default function Quiz() {
       alignItems: "center",
       padding: "0 16px",
     }}>
-      <div style={{ width: "100%", maxWidth: "420px", padding: "40px 0" }}>
+      <div style={{ width: "100%", maxWidth: "420px", padding: "40px 0", margin: "0 auto", boxSizing: "border-box" }}>
 
         {/* ── INTRO ── */}
         {phase === "intro" && (
