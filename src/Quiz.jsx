@@ -278,7 +278,7 @@ export default function Quiz() {
   const [animating, setAnimating] = useState(false);
 
   const [imagesReady, setImagesReady] = useState(false);
-  const [imgExt, setImgExt] = useState('.png');
+  const [imgExt, setImgExt] = useState('.webp');
 
   useEffect(() => {
     // Detect WebP support
