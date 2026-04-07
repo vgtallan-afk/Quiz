@@ -317,10 +317,28 @@ export default function Quiz() {
   const procBarRef = useRef(null);
   const procPctRef = useRef(null);
 
-  // ── RASTREADOR DO FACEBOOK (CÉREBRO) ──
+  // ── RASTREADOR DO FACEBOOK ──
   useEffect(() => {
+    if (phase === "intro") {
+      // Usuária chegou na página do quiz
+      if (window.fbq) {
+        window.fbq('trackCustom', 'QuizInicio', {
+          content_name: 'Quiz ClaraMente',
+          content_category: 'Funil ClaraMente'
+        });
+      }
+    }
+    if (phase === "quiz") {
+      // Usuária clicou em "Começar o teste"
+      if (window.fbq) {
+        window.fbq('trackCustom', 'QuizComecou', {
+          content_name: 'Quiz ClaraMente',
+          content_category: 'Funil ClaraMente'
+        });
+      }
+    }
     if (phase === "result") {
-      // Avisa o Facebook que ela terminou o quiz
+      // Usuária completou o quiz e chegou ao resultado
       if (window.fbq) {
         window.fbq('track', 'ViewContent', {
           content_name: 'Resultado do Quiz',
@@ -333,8 +351,21 @@ export default function Quiz() {
   const handleAnswer = (val) => {
     if (animating) return;
     setAnimating(true);
+
+    const questionNumber = current + 1; // pergunta 1 a 10
+
+    // Dispara evento no Meta Pixel para cada pergunta respondida
+    if (window.fbq) {
+      window.fbq('trackCustom', 'QuizPergunta', {
+        content_name: `Pergunta ${questionNumber} de ${quizData.statements.length}`,
+        content_category: 'Funil ClaraMente',
+        step: questionNumber
+      });
+    }
+
     const newAnswers = { ...answers, [current]: val };
     setAnswers(newAnswers);
+
     setTimeout(() => {
       if (current < quizData.statements.length - 1) {
         setCurrent(current + 1);
